@@ -27,13 +27,14 @@ int main()
     (similar(s,q))? cout<<"YES": cout<<"NO";
     
     
+    
     return 0;
 }
 bool similar(stack<int>s, queue<int>q)
 {
     //corner case
     if(s.size() != q.size()) return false;
-    
+
     while (!s.empty())
     {
         if(s.top() != q.front()) return false;
