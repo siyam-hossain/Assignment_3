@@ -21,18 +21,16 @@ void is_vld(string &s)
     stack<char> st;
    for (char ch : s)
    {
-        if(!st.empty() && ( (st.top()=='0' && ch =='1')||(st.top()=='1' && ch =='0') ) )
+
+        if (!st.empty() && ((st.top() == '0' && ch == '1') || (st.top() == '1' && ch == '0'))) 
         {
-            if( (st.top()=='0' && ch =='1')||(st.top()=='1' && ch =='0'))
-            {
-                st.pop();   
-            }
-            else st.push(ch);
+            st.pop(); 
+        } else {
+            st.push(ch);
         }
-        else st.push(ch);
 
         /*
-            out concern is finding pair first 01 or 10,
+            our concern is finding pair first 01 or 10,
             but if we use below approach one corner case might disrup, which is the pair 00 or 11
             ------->you can correct here (1) the conner case
         */
